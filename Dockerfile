@@ -1,8 +1,8 @@
-ARG GO_VERSION=1.19-alpine
-FROM golang:$GO_VERSION AS build-env
+ARG GO_VERSION=1.20-alpine
+FROM golang:${GO_VERSION} AS build-env
 
-ARG GIT_VERSION=2.36.2
-RUN apk update && apk add --no-cache git~=$GIT_VERSION
+ARG GIT_VERSION=2.40.1-r0
+RUN apk update && apk add --no-cache "git=${GIT_VERSION}"
 
 WORKDIR /src
 
